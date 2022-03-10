@@ -1,0 +1,728 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: arial;
+	width: 100%;
+	background-color: var(--textColorLight);
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+}
+
+:root {
+	--bgColor: #fff;
+	--bgColorLight: #fff7;
+	--bgColorLight0: #fff3;
+	--textColor: #333;
+	--textColorLight: #3337;
+	--textColorLight0: #3333;
+	--textColorLow: #3332;
+
+	--textBGColor: #fff;
+	--textBGColorLight: #fff6;
+	--textBGColorLight0: #fff3;
+	--onlineBG: green;
+	--likeColor: #056BE1;
+}
+
+.darkMode {
+	--bgColor: #333;
+	--bgColorLight: #3337;
+	--bgColorLight0: #3333;
+	--textColor: #fff;
+	--textColorLight: #fff7;
+	--textColorLight0: #fff3;
+	--textColorLow: #fff2;
+
+	--textBGColor: #333;
+	--textBGColorLight: #3336;
+	--textBGColorLight0: #3333;
+	--onlineBG: green;
+	--likeColor: #056BE1;
+}
+
+.postDiv {
+	width: 100%;
+	height: 100vh;
+	overflow-y: scroll;
+}
+
+.PostSection {
+	width: 400px;
+	margin: 100px auto;
+	box-sizing: border-box;
+	background-color: var(--bgColor);
+	border-radius: 10px;
+	box-shadow: 0px 0px 5px var(--textColorLight);
+}
+
+.haderSection {
+	width: 100%;
+	height: 70px;
+	display: grid;
+	grid-template-columns: 2fr 8fr;
+	border-radius: 10px 10px 0px 0px;
+}
+.profileDiv {
+	position: relative;
+	width: 55px;
+	height: 55px;
+	background-color: var(--bgColorLight0);
+	border-radius: 50%;
+	margin-top: 10px;
+	margin-left: 10px;
+	cursor: pointer;
+	box-shadow: 0px 0px 5px var(--textColorLight0);
+}
+.profileDiv img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.online {
+	position: absolute;
+	bottom: 1px;
+	right: 1px;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: var(--onlineBG);
+	border: 2px solid var(--textBGColor);
+
+}
+
+.Titlesection {
+	position: relative;
+}
+.Titlesection h1 {
+	font-size: 15px;
+	margin-top: 20px;
+}
+.Titlesection h1 a {
+	text-decoration: none;
+	color: var(--textColor);
+}
+.Titlesection h1 a:hover {
+	text-decoration: underline;
+}
+.Titlesection p {
+	font-size: 11px;
+	color: var(--textColorLight);
+}
+.Titlesection p span {
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+.dotIcon {
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	transform: translateY(-50%);
+	width: 30px;
+	height: 30px;
+	font-size: 20px;
+	color: var(--textColor);
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+	border-radius: 50%;
+}
+.dotIcon:active {
+	background-color: var(--bgColorLight0);
+}
+
+.showText {
+	font-size: 15px;
+	color: var(--textColor);
+	padding: 0px 15px 5px 15px; 
+	font-family: revert;
+}
+.showTextVlu {
+	cursor: context-menu;
+}
+
+.seeBtn {
+	font-weight: 600;
+}
+.seeBtn:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.disNone {
+	display: none;
+}
+.disBlock {
+	display: block;
+}
+.imagesDiv {
+	width: 100%;
+}
+.imagesDiv img {
+	width: 100%;
+	cursor: pointer;
+}
+
+.likeShow {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	display: none;
+}
+#likeShow {
+	/*display: none;*/
+}
+
+#leftLS {
+	/*display: none;*/
+}
+
+.lkIcon {
+	padding: 5px 0px 5px 15px;
+	display: inline-block;
+}
+.iconBar {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	display: inline-block;
+	cursor: pointer;
+	border: 1px solid var(--textBGColor);
+	background-color: var(--textBGColor);
+}
+
+.iconBar1 {
+	z-index: 3;
+	margin-left: 0px;
+	/*display: none;*/
+}
+.iconBar2 {
+	z-index: 2;
+	margin-left: -10px;
+	display: none;
+}
+.iconBar3 {
+	z-index: 1;
+	margin-left: -10px;
+	display: none;
+}
+.activePrass {
+	color: #056BE1;
+}
+.coutnLike {
+	font-size: 15px;
+	color: var(--textColor);
+	display: inline-block;
+	margin-left: 0px;
+	transform: translateY(-5px);
+}
+
+.commShareCount {
+	padding: 5px 15px 5px 0px;
+	position: relative;
+	display: none;
+}
+.commShareCount p {
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	transform: translateY(-50%);
+	font-size: 12px;
+	color: var(--textColor);
+}
+.commShareCount p span {
+	cursor: pointer;
+}
+.commShareCount p span:first-child {
+	margin-right: 5px;
+}
+.commShareCount p span:hover {
+	text-decoration: underline;
+}
+.iconBar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.likeCommShare {
+	width: 100%;
+	padding: 5px 10px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	box-sizing: border-box;
+}
+.likeCommShare div {
+	width: 100%;
+	padding: 7px 0px;
+	text-align: center;
+	font-size: 15px;
+	border-radius: 20px;
+	color: var(--textColor);
+	cursor: pointer;
+}
+.likeCommShare div:hover {
+	background-color: var(--textColorLight0);
+}
+.likeCommShare div:active {
+	background-color: var(--bgColorLight);
+}
+
+.CommentSection {
+	width: 100%;
+	padding: 5px 10px;
+	display: grid;
+	grid-template-columns: 1fr 9fr;
+	grid-gap: 5px;
+}
+
+.borderBottom {
+	border-bottom: 1px solid var(--textColorLight);
+}
+
+.profileDivMini {
+	width: 40px;
+	height: 40px;
+	background-color: var(--bgColorLight0);
+	border-radius: 50%;
+	cursor: pointer;
+	position: relative;
+	box-shadow: 0px 0px 5px var(--textColorLight0);
+}
+.onlineMini {
+	position: absolute;
+	bottom: 1px;
+	right: 1px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: var(--onlineBG);
+	border: 2px solid var(--textBGColor);
+
+}
+.profileDivMini img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+.inputText {
+	position: relative;
+}
+
+.inputText textarea {
+	width: 95%;
+	height: 40px;
+	box-sizing: border-box;
+	padding: 10px 100px 12px 15px;
+	font-size: 15px;
+	font-family: initial;
+	border: none;
+	outline: none;
+	border-radius: 30px;
+	resize: none;
+	color: var(--textColor);
+	background-color: var(--textColorLow);
+}
+
+.commentList {
+	position: absolute;
+	top: 50%;
+	right: 30px;
+	transform: translateY(-50%);
+	padding: 0;
+	margin-bottom: 0;
+}
+.commentList li {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	display: inline-block;
+	margin-left: -2px;
+	cursor: pointer;
+	color: var(--textColor);
+	overflow: hidden;
+}
+.commentList li i {
+	padding: 5px;
+}
+
+.commentList li:active {
+	background-color: var(--bgColorLight0);
+}
+
+#commentCount {
+	display: none;
+}
+#shareCount {
+	display: none;
+}
+
+.likeCommShare {
+	position: relative;
+}
+.hoverReact {
+	width: 180px !important;
+	height: 25px !important;
+	border-radius: 30px !important;
+	background-color: #fff !important;
+	position: absolute !important;
+	left: 5px !important;
+	top: -35px !important;
+	border: 1px solid #333;
+	display: flex;
+	visibility: hidden;
+}
+.hoverReact div {
+	width: 33px;
+	height: 23px;
+	border-radius: 50%;
+	transform: translateY(-5px);
+}
+.hoverReact div img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transform: scale(1.5);
+	transition: 0.3s;
+}
+.hoverReact div img:hover {
+	background-color: #fff0 !important;
+	transform: scale(2);
+}
+
+
+#likeBtn .imagesDivBtn {
+	width: 25px !important;
+	height: 25px !important;
+	box-sizing: border-box;
+	position: relative;
+	margin: auto;
+	transform: translateX(-15px);
+}
+.imagesDivBtn img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	filter: grayscale(100%);
+}
+
+
+
+.imagesDivBtn span {
+	position: absolute;
+	left: 30px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: inline-block;
+}
+.likeCommShare div span {
+	line-height: 25px;
+}
+
+.tagName {
+	position: relative;
+	display: inline-block;
+}
+
+.nameTitleDiv {
+	position: absolute;
+	right: -50px;
+	top: 18px;
+	width: 300px;
+	box-sizing: border-box;
+	padding: 7px;
+	border-radius: 10px;
+	background-color: var(--textBGColor);
+	box-shadow: 0px 0px 5px var(--bgColorLight);
+	display: none;
+}
+
+.informationTD {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 2fr 6fr;
+}
+
+.informationTD .profileDiv {
+	margin: 0;
+}
+
+.listEditer {
+	padding: 0px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	margin-left: 20px;
+}
+.listEditer li {
+	font-size: 12px;
+	margin-top: 10px;
+	color: var(--textColorLight);
+	list-style: none;
+	position: relative;
+}
+.listEditer li i {
+	position: absolute;
+	font-size: 15px;
+	left: -25px;
+	top: 0;
+}
+
+.btnSection {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 4fr 4fr 2fr;
+	grid-column-gap: 5px;
+}
+.btnSection button {
+	width: 100%;
+	padding: 5px 0px;
+	text-align: center;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	background-color: var(--textColorLight0);
+	color: var(--textColor);
+	cursor: pointer;
+}
+.btnSection button:active {
+	background-color: var(--textColorLight);
+}
+.btnSection button:first-child {
+	background-color: var(--likeColor);
+	color: #fff;
+}
+.btnSection button:first-child:active {
+	background-color: #065CBF;
+}
+
+.tagName:hover .nameTitleDiv {
+	display: block;
+}
+
+.DotClickActive {
+	position: relative;
+	right: 165px;
+	top: 0;
+	width: 200px;
+	background-color: var(--bgColor);
+	box-shadow: 0px 0px 5px var(--bgColorLight);
+	border-radius: 5px;
+	display: none;
+}
+.DotClickActive ul {
+	padding: 0;
+	margin-bottom: 0;
+}
+.DotClickActive ul li {
+	font-size: 10px;
+	color: var(--textColor);
+	text-align: left;
+	list-style: none;
+	padding: 0px 10px;
+}
+.DotClickActive ul li i {
+	margin-right: 5px;
+	font-size: 12px;
+}
+
+.DotClickActive ul li:hover {
+	background-color: var(--textColorLow);
+}
+
+
+
+.poppap {
+	width: 100%;
+	height: 100vh;
+	overflow-y: scroll;
+	z-index: 5;
+	background-color: var(--bgColor);
+	border-right: 1px solid var(--likeColor);
+}
+
+.headerSectin {
+	width: 100%;
+	height: 70px;
+	background-color: var(--likeColor);
+	position: relative;
+}
+.headerSectin img {
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 35px;
+}
+.closeBtn {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.closeBtn i {
+	font-size: 20px;
+	padding: 7px 11px;
+	color: #fff;
+}
+.closeBtn:active {
+	background-color: #3333;
+}
+
+.inputFeom {
+	width: 90%;
+	padding: 20px 0px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	margin: auto;
+	text-align: center;
+}
+.inputFeom input {
+	width: 100%;
+	padding: 9px;
+	border: 1px solid var(--textColorLight);
+	outline: none;
+	border-radius: 5px;
+	font-size: 12px;
+	box-sizing: border-box;
+	margin: 10px 0px;
+	font-family: initial;
+}
+
+
+.inputFeom textarea {
+	width: 100%;
+	height: 100px;
+	resize: none;
+	border: 1px solid var(--textColorLight);
+	box-sizing: border-box;
+	margin: 10px 0px;
+	border-radius: 5px;
+	padding: 12px;
+	font-size: 12px;
+	outline: none;
+	font-family: initial;
+}
+
+.btnDiv {
+	width: 100%;
+	margin-top: 10px;
+	text-align: center;
+}
+.btnDiv button {
+	width: 47%;
+	padding: 10px;
+	box-sizing: border-box;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+	margin: 1%;
+	font-size: 14px;
+	cursor: pointer;
+	background-color: var(--likeColor);
+	color: #fff;
+	font-weight: 600;
+}
+.btnDiv button:active {
+	background-color: #045BBF;
+}
+.btnDiv button:first-child {
+	width: 100%;
+	box-sizing: border-box;
+	margin: 0px;
+	margin-bottom: 15px;
+}
+
+
+
+
+.listInfo {
+	padding: 0;
+	margin-bottom: 0;
+	width: 100%;
+	box-sizing: border-box;
+}
+.listInfo li {
+	width: 100%;
+	box-sizing: border-box;
+	font-size: 16px;
+	font-weight: 600;
+}
+.listInfo li p {
+	position: relative;
+	transition: 0.3s;
+	padding: 10px;
+	cursor: pointer;
+	color: var(--textColor);
+}
+.listInfo li p span {
+	margin-right: 5px;
+}
+.listInfo li p i {
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.listInfo li p:hover {
+	background-color: var(--textColorLow);
+	color: var(--textColor);
+}
+
+.heightAddOfRemove {
+	height: 39px;
+	overflow: hidden;
+}
+
+.modeBtn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 5px;
+	width: 45px !important;
+	height: 20px !important;
+	border-radius: 15px;
+	transition: 0.3s;
+	background-color: var(--textColorLight0);
+}
+
+.roundBtn {
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	transform: translateY(-50%);
+	width: 25px !important;
+	height: 25px !important;
+	background-color: var(--textColorLight);
+	border-radius: 50%;
+	transition: 0.3s;
+}
+
+
+.EditMake {
+	position: absolute;
+	left: 0px;
+	top: 100px;
+	width: 30px;
+	height: 50px;
+	background-color: var(--likeColor);
+	border-radius: 0px 10px 10px 0px;
+	cursor: pointer;
+}
+.EditMake i {
+	font-size: 25px;
+	color: #fff;
+	margin-left: 6px;
+	margin-top: 13px;
+}
